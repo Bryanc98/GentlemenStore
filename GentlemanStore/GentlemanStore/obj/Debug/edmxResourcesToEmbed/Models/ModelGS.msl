@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GeltlemenStoreModelStoreContainer" CdmEntityContainer="GeltlemenStoreEntities">
+    <EntitySetMapping Name="CategoriaGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.CategoriaGS">
+        <MappingFragment StoreEntitySet="CategoriaGS">
+          <ScalarProperty Name="Id_Categoria" ColumnName="Id_Categoria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientesGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.ClientesGS">
+        <MappingFragment StoreEntitySet="ClientesGS">
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="Nom_Cliente" ColumnName="Nom_Cliente" />
+          <ScalarProperty Name="Identificacion_CGS" ColumnName="Identificacion_CGS" />
+          <ScalarProperty Name="Tel_Cliente" ColumnName="Tel_Cliente" />
+          <ScalarProperty Name="Email_Cliente" ColumnName="Email_Cliente" />
+          <ScalarProperty Name="IdMetodoPago" ColumnName="IdMetodoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartamentoGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.DepartamentoGS">
+        <MappingFragment StoreEntitySet="DepartamentoGS">
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+          <ScalarProperty Name="NombreDep" ColumnName="NombreDep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpleadoCargoGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.EmpleadoCargoGS">
+        <MappingFragment StoreEntitySet="EmpleadoCargoGS">
+          <ScalarProperty Name="IdEmpCargo" ColumnName="IdEmpCargo" />
+          <ScalarProperty Name="NombreCargo" ColumnName="NombreCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpleadosGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.EmpleadosGS">
+        <MappingFragment StoreEntitySet="EmpleadosGS">
+          <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+          <ScalarProperty Name="Nom_Empleado" ColumnName="Nom_Empleado" />
+          <ScalarProperty Name="Cedula_Empleado" ColumnName="Cedula_Empleado" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Ocupacion_Empleado" ColumnName="Ocupacion_Empleado" />
+          <ScalarProperty Name="Salario_Empleado" ColumnName="Salario_Empleado" />
+          <ScalarProperty Name="IdCargoEmp" ColumnName="IdCargoEmp" />
+          <ScalarProperty Name="IdDepEmp" ColumnName="IdDepEmp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetodoPagoGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.MetodoPagoGS">
+        <MappingFragment StoreEntitySet="MetodoPagoGS">
+          <ScalarProperty Name="IdMetodoPago" ColumnName="IdMetodoPago" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdProveedorPago" ColumnName="IdProveedorPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductosGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.ProductosGS">
+        <MappingFragment StoreEntitySet="ProductosGS">
+          <ScalarProperty Name="ID_Productos" ColumnName="ID_Productos" />
+          <ScalarProperty Name="Nom_Producto" ColumnName="Nom_Producto" />
+          <ScalarProperty Name="Tipo_Producto" ColumnName="Tipo_Producto" />
+          <ScalarProperty Name="Cantidad_Producto" ColumnName="Cantidad_Producto" />
+          <ScalarProperty Name="CostoU_Producto" ColumnName="CostoU_Producto" />
+          <ScalarProperty Name="Suplidor_P" ColumnName="Suplidor_P" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedorPagoGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.ProveedorPagoGS">
+        <MappingFragment StoreEntitySet="ProveedorPagoGS">
+          <ScalarProperty Name="IdProveedorPago" ColumnName="IdProveedorPago" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategoriaGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.SubCategoriaGS">
+        <MappingFragment StoreEntitySet="SubCategoriaGS">
+          <ScalarProperty Name="Id_SubCategoria" ColumnName="Id_SubCategoria" />
+          <ScalarProperty Name="NombreSubcategoria" ColumnName="NombreSubcategoria" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuplidoresGS">
+      <EntityTypeMapping TypeName="GeltlemenStoreModel.SuplidoresGS">
+        <MappingFragment StoreEntitySet="SuplidoresGS">
+          <ScalarProperty Name="ID_Suplidor" ColumnName="ID_Suplidor" />
+          <ScalarProperty Name="Nom_Suplidor" ColumnName="Nom_Suplidor" />
+          <ScalarProperty Name="RNC_Suplidor" ColumnName="RNC_Suplidor" />
+          <ScalarProperty Name="Dirrec_Suplidor" ColumnName="Dirrec_Suplidor" />
+          <ScalarProperty Name="Tel_Suplidor" ColumnName="Tel_Suplidor" />
+          <ScalarProperty Name="Email_Suplidor" ColumnName="Email_Suplidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

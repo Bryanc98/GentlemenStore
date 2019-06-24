@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeltlemenStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoriaGS">
+    <Key>
+      <PropertyRef Name="Id_Categoria" />
+    </Key>
+    <Property Name="Id_Categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="ClientesGS">
+    <Key>
+      <PropertyRef Name="ID_Cliente" />
+    </Key>
+    <Property Name="ID_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Cliente" Type="varchar" MaxLength="50" />
+    <Property Name="Identificacion_CGS" Type="int" />
+    <Property Name="Tel_Cliente" Type="int" />
+    <Property Name="Email_Cliente" Type="varchar" MaxLength="50" />
+    <Property Name="IdMetodoPago" Type="int" />
+  </EntityType>
+  <EntityType Name="DepartamentoGS">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDep" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="EmpleadoCargoGS">
+    <Key>
+      <PropertyRef Name="IdEmpCargo" />
+    </Key>
+    <Property Name="IdEmpCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCargo" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="EmpleadosGS">
+    <Key>
+      <PropertyRef Name="ID_Empleado" />
+    </Key>
+    <Property Name="ID_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Empleado" Type="varchar" MaxLength="50" />
+    <Property Name="Cedula_Empleado" Type="varchar" MaxLength="14" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Ocupacion_Empleado" Type="varchar" MaxLength="30" />
+    <Property Name="Salario_Empleado" Type="float" />
+    <Property Name="IdCargoEmp" Type="int" />
+    <Property Name="IdDepEmp" Type="int" />
+  </EntityType>
+  <EntityType Name="MetodoPagoGS">
+    <Key>
+      <PropertyRef Name="IdMetodoPago" />
+    </Key>
+    <Property Name="IdMetodoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="60" />
+    <Property Name="IdProveedorPago" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductosGS">
+    <Key>
+      <PropertyRef Name="ID_Productos" />
+    </Key>
+    <Property Name="ID_Productos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Producto" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo_Producto" Type="varchar" MaxLength="50" />
+    <Property Name="Cantidad_Producto" Type="int" />
+    <Property Name="CostoU_Producto" Type="int" />
+    <Property Name="Suplidor_P" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="IdSubCategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="ProveedorPagoGS">
+    <Key>
+      <PropertyRef Name="IdProveedorPago" />
+    </Key>
+    <Property Name="IdProveedorPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SubCategoriaGS">
+    <Key>
+      <PropertyRef Name="Id_SubCategoria" />
+    </Key>
+    <Property Name="Id_SubCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreSubcategoria" Type="varchar" MaxLength="60" />
+    <Property Name="IdCategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="SuplidoresGS">
+    <Key>
+      <PropertyRef Name="ID_Suplidor" />
+    </Key>
+    <Property Name="ID_Suplidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Suplidor" Type="varchar" MaxLength="50" />
+    <Property Name="RNC_Suplidor" Type="int" />
+    <Property Name="Dirrec_Suplidor" Type="varchar" MaxLength="50" />
+    <Property Name="Tel_Suplidor" Type="int" />
+    <Property Name="Email_Suplidor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CARGO">
+    <End Role="EmpleadoCargoGS" Type="Self.EmpleadoCargoGS" Multiplicity="0..1" />
+    <End Role="EmpleadosGS" Type="Self.EmpleadosGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpleadoCargoGS">
+        <PropertyRef Name="IdEmpCargo" />
+      </Principal>
+      <Dependent Role="EmpleadosGS">
+        <PropertyRef Name="IdCargoEmp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CATEG">
+    <End Role="CategoriaGS" Type="Self.CategoriaGS" Multiplicity="0..1" />
+    <End Role="ProductosGS" Type="Self.ProductosGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaGS">
+        <PropertyRef Name="Id_Categoria" />
+      </Principal>
+      <Dependent Role="ProductosGS">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categoria">
+    <End Role="CategoriaGS" Type="Self.CategoriaGS" Multiplicity="0..1" />
+    <End Role="SubCategoriaGS" Type="Self.SubCategoriaGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaGS">
+        <PropertyRef Name="Id_Categoria" />
+      </Principal>
+      <Dependent Role="SubCategoriaGS">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEP">
+    <End Role="DepartamentoGS" Type="Self.DepartamentoGS" Multiplicity="0..1" />
+    <End Role="EmpleadosGS" Type="Self.EmpleadosGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartamentoGS">
+        <PropertyRef Name="IdDepartamento" />
+      </Principal>
+      <Dependent Role="EmpleadosGS">
+        <PropertyRef Name="IdDepEmp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_METODPAGO">
+    <End Role="MetodoPagoGS" Type="Self.MetodoPagoGS" Multiplicity="0..1" />
+    <End Role="ClientesGS" Type="Self.ClientesGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetodoPagoGS">
+        <PropertyRef Name="IdMetodoPago" />
+      </Principal>
+      <Dependent Role="ClientesGS">
+        <PropertyRef Name="IdMetodoPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVEPAGO">
+    <End Role="ProveedorPagoGS" Type="Self.ProveedorPagoGS" Multiplicity="0..1" />
+    <End Role="MetodoPagoGS" Type="Self.MetodoPagoGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProveedorPagoGS">
+        <PropertyRef Name="IdProveedorPago" />
+      </Principal>
+      <Dependent Role="MetodoPagoGS">
+        <PropertyRef Name="IdProveedorPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBCATEG">
+    <End Role="SubCategoriaGS" Type="Self.SubCategoriaGS" Multiplicity="0..1" />
+    <End Role="ProductosGS" Type="Self.ProductosGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoriaGS">
+        <PropertyRef Name="Id_SubCategoria" />
+      </Principal>
+      <Dependent Role="ProductosGS">
+        <PropertyRef Name="IdSubCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPLI">
+    <End Role="SuplidoresGS" Type="Self.SuplidoresGS" Multiplicity="0..1" />
+    <End Role="ProductosGS" Type="Self.ProductosGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuplidoresGS">
+        <PropertyRef Name="ID_Suplidor" />
+      </Principal>
+      <Dependent Role="ProductosGS">
+        <PropertyRef Name="Suplidor_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GeltlemenStoreModelStoreContainer">
+    <EntitySet Name="CategoriaGS" EntityType="Self.CategoriaGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientesGS" EntityType="Self.ClientesGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepartamentoGS" EntityType="Self.DepartamentoGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpleadoCargoGS" EntityType="Self.EmpleadoCargoGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpleadosGS" EntityType="Self.EmpleadosGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetodoPagoGS" EntityType="Self.MetodoPagoGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductosGS" EntityType="Self.ProductosGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProveedorPagoGS" EntityType="Self.ProveedorPagoGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategoriaGS" EntityType="Self.SubCategoriaGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuplidoresGS" EntityType="Self.SuplidoresGS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CARGO" Association="Self.FK_CARGO">
+      <End Role="EmpleadoCargoGS" EntitySet="EmpleadoCargoGS" />
+      <End Role="EmpleadosGS" EntitySet="EmpleadosGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CATEG" Association="Self.FK_CATEG">
+      <End Role="CategoriaGS" EntitySet="CategoriaGS" />
+      <End Role="ProductosGS" EntitySet="ProductosGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
+      <End Role="CategoriaGS" EntitySet="CategoriaGS" />
+      <End Role="SubCategoriaGS" EntitySet="SubCategoriaGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEP" Association="Self.FK_DEP">
+      <End Role="DepartamentoGS" EntitySet="DepartamentoGS" />
+      <End Role="EmpleadosGS" EntitySet="EmpleadosGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_METODPAGO" Association="Self.FK_METODPAGO">
+      <End Role="MetodoPagoGS" EntitySet="MetodoPagoGS" />
+      <End Role="ClientesGS" EntitySet="ClientesGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVEPAGO" Association="Self.FK_PROVEPAGO">
+      <End Role="ProveedorPagoGS" EntitySet="ProveedorPagoGS" />
+      <End Role="MetodoPagoGS" EntitySet="MetodoPagoGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBCATEG" Association="Self.FK_SUBCATEG">
+      <End Role="SubCategoriaGS" EntitySet="SubCategoriaGS" />
+      <End Role="ProductosGS" EntitySet="ProductosGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPLI" Association="Self.FK_SUPLI">
+      <End Role="SuplidoresGS" EntitySet="SuplidoresGS" />
+      <End Role="ProductosGS" EntitySet="ProductosGS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GentlemanStore.Models.ProductosGS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoU_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaGS.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategoriaGS.NombreSubcategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuplidoresGS.Nom_Suplidor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoU_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoriaGS.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategoriaGS.NombreSubcategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuplidoresGS.Nom_Suplidor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Productos }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Productos }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Productos })
+        </td>
+    </tr>
+}
+
+</table>

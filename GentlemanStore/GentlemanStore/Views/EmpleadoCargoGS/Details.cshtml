@@ -1,0 +1,26 @@
+﻿@model GentlemanStore.Models.EmpleadoCargoGS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmpleadoCargoGS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCargo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdEmpCargo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

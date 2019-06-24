@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GentlemanStore.Models.ClientesGS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion_CGS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tel_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetodoPagoGS.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificacion_CGS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tel_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetodoPagoGS.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Cliente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Cliente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Cliente })
+        </td>
+    </tr>
+}
+
+</table>

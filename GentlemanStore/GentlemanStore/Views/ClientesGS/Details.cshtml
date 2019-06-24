@@ -1,0 +1,58 @@
+﻿@model GentlemanStore.Models.ClientesGS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClientesGS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_CGS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_CGS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetodoPagoGS.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetodoPagoGS.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Cliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

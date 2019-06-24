@@ -1,0 +1,58 @@
+﻿@model GentlemanStore.Models.SuplidoresGS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SuplidoresGS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Suplidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RNC_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RNC_Suplidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dirrec_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dirrec_Suplidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel_Suplidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_Suplidor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Suplidor }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

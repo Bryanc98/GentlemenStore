@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GentlemanStore.Models.EmpleadosGS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula_Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ocupacion_Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario_Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartamentoGS.NombreDep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpleadoCargoGS.NombreCargo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula_Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ocupacion_Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario_Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartamentoGS.NombreDep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpleadoCargoGS.NombreCargo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Empleado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Empleado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Empleado })
+        </td>
+    </tr>
+}
+
+</table>

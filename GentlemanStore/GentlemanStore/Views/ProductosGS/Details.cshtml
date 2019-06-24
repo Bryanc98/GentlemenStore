@@ -1,0 +1,74 @@
+﻿@model GentlemanStore.Models.ProductosGS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductosGS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostoU_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostoU_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaGS.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaGS.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategoriaGS.NombreSubcategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCategoriaGS.NombreSubcategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuplidoresGS.Nom_Suplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuplidoresGS.Nom_Suplidor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Productos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
