@@ -1,0 +1,40 @@
+tabla productos
+identificador de productos
+nombre de producto
+tipo de productos
+existencia
+cosoto unitario
+suplidor del prodcuto
+
+-Tabla de suplidores
+identificador de suplidor
+nombre del suplidor
+direccion de suplidor
+telefono
+correo
+
+-Tabla de empleados
+identificador de empleado
+cedula del empleado
+nombre del empleado
+puesto
+salario mensual
+
+-Tabla de nomina
+
+-Tabla Clientes
+Identificador del cliente
+Rnc o cedula del cliente
+nombre del cliente
+telefono del cliente
+correo del cliente
+
+-Tabla facturas
+identificador de factura(numero de factura)
+fecha
+hora
+cliente (tabla clientes)
+productos comprados (tabla de prodcutos, identificador)
+cantidad comprada(inventario)
+
+
